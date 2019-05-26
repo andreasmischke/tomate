@@ -13,6 +13,7 @@ const Timer = styled.div`
 const Time = styled.span`
   display: block;
   font-size: 30vw;
+  line-height: 10vw;
   color: #fff;
 `
 

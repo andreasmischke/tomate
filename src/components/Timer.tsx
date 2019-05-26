@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ProgressBar from './ProgressBar';
 import styled from 'styled-components';
 import TextTimer from './TextTimer';
+import Controls from './Controls';
 
 const Wrapper = styled.main`
   background: #222;
@@ -13,8 +14,6 @@ interface TimerProps {
   color: string;
   endDate: Date;
   duration: number;
-  active: boolean;
-  onFinished: () => void,
 }
 
 function fillZeroLeft(n: number): string {
@@ -33,17 +32,14 @@ export default function Timer(props: TimerProps) {
     color,
     endDate,
     duration,
-    active,
-    onFinished,
   } = props;
 
+  const [active, setActive] = useState<boolean>(false);
   const [timeLeft, setTimeLeft] = useState<string>(secondsToString(duration));
   const [percentage, setPercentage] = useState<number>(0);
 
   useEffect(() => {
     function updateCalculateRemainingTime(): void {
-      console.log('update', new Date().toString());
-      
       const msLeft = endDate.getTime() - Date.now();
       const seconds = Math.floor(msLeft / 1000);
 
@@ -51,7 +47,7 @@ export default function Timer(props: TimerProps) {
       setPercentage((1 - (seconds) / duration) * 100);
 
       if(msLeft < 1000) {
-        onFinished();
+        setActive(false);
       }
     }
 
@@ -65,6 +61,12 @@ export default function Timer(props: TimerProps) {
     <Wrapper>
       <TextTimer time={timeLeft} />
       <ProgressBar color={color} percentage={percentage} />
+      <Controls
+        onReset={() => console.log('TODO')}
+        onStart={() => setActive(true)}
+        onStop={() => setActive(false)}
+        active={active}
+      />
     </Wrapper>
   );
 }
