@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "28d08062c0e031ec684244415aad47cd",
+    "revision": "54050ac1a72d178f5598d5356ce48489",
     "url": "/tomate/index.html"
   },
   {
-    "revision": "da96cf6887abf45a161d",
+    "revision": "d4dd664c5429a369a759",
     "url": "/tomate/static/css/main.34de6062.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tomate/static/js/2.add4865d.chunk.js"
   },
   {
-    "revision": "da96cf6887abf45a161d",
-    "url": "/tomate/static/js/main.2a0aea23.chunk.js"
+    "revision": "d4dd664c5429a369a759",
+    "url": "/tomate/static/js/main.39cf9477.chunk.js"
   },
   {
     "revision": "87712a10c30b9b2d54c4",
